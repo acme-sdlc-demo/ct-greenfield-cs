@@ -1,0 +1,28 @@
+# Written by the Agentic SDLC Platform from the Project's config; change it through the platform.
+# It runs exactly the platform's gate.
+name: sdlc-checks
+'on':
+  pull_request: {}
+  push:
+    branches:
+    - main
+permissions:
+  contents: read
+jobs:
+  checks:
+    name: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: 'install: dotnet restore'
+      run: dotnet restore
+    - name: dotnet format whitespace --verify-no-changes
+      run: dotnet format whitespace --verify-no-changes
+    - name: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
+    - name: dotnet test --configuration Release --no-build --no-restore
+      run: dotnet test --configuration Release --no-build --no-restore
