@@ -1,0 +1,18 @@
+# Written by the Agentic SDLC Platform from the Project's config; change it through the platform.
+# The paths no Run may change; a change to them needs a code owner's review.
+
+*.runsettings @nimchungam @njt1980
+Directory.Build.props @nimchungam @njt1980
+Directory.Build.targets @nimchungam @njt1980
+Directory.Packages.props @nimchungam @njt1980
+.editorconfig @nimchungam @njt1980
+global.json @nimchungam @njt1980
+*.ruleset @nimchungam @njt1980
+stylecop.json @nimchungam @njt1980
+/.claude/ @nimchungam @njt1980
+.mcp.json @nimchungam @njt1980
+/.github/ @nimchungam @njt1980
+.gitlab-ci.yml @nimchungam @njt1980
+azure-pipelines.yml @nimchungam @njt1980
+.gitattributes @nimchungam @njt1980
+CLAUDE.md @nimchungam @njt1980
