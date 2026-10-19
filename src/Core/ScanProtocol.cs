@@ -10,7 +10,10 @@ public sealed class ScanProtocol
     private static readonly int[] AllowedTubeVoltagesKv = { 70, 80, 100, 120, 140, 150 };
 
     /// <summary>Gets the name of the protocol.</summary>
-    public string Name { get; }
+    public string Name { get; init; } = string.Empty;
+
+    /// <summary>Gets the slice thickness in millimetres as a decimal value.</summary>
+    public decimal SliceThicknessMillimetres { get; init; }
 
     /// <summary>Gets the tube voltage in kilovolts.</summary>
     public int TubeVoltageKv { get; }
@@ -23,6 +26,12 @@ public sealed class ScanProtocol
 
     /// <summary>Gets the helical pitch (dimensionless).</summary>
     public double Pitch { get; }
+
+    /// <summary>
+    /// Initialises a new <see cref="ScanProtocol"/> with default values.
+    /// Use the object-initialiser syntax to set individual properties.
+    /// </summary>
+    public ScanProtocol() { }
 
     /// <summary>
     /// Initialises a new <see cref="ScanProtocol"/>.
